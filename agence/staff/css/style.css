@@ -1,0 +1,604 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: #ffffff;
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+      position: relative;
+        animation-name: load;
+    animation-duration: 2s;
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #1ab188;
+  color: #2d2c2c;
+}
+
+#signup {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #524c4c;
+  font-weight: 300;
+  margin: 0 0 40px;
+ font-size: 1.2em;
+ cursor: pointer;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: #6f6d6d;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 15px;
+  font-size: 15px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #2d2c2c;
+}
+
+input, textarea {
+  font-size: 19px;
+  display: block;
+  width: 100%;
+  height:37px;
+  padding: 2px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #2d2c2c;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #e6768f;
+}
+
+.button-block {
+    display: block;
+    width: 50%;
+    margin: auto;
+    border-radius: 15px;
+        cursor: pointer;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+@keyframes load {
+    from {top:-900px;
+  }
+    to {top:0px;
+  }
+}
+.formProfile {
+  background: #ffffff;
+  padding: 40px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+      position: relative;
+        animation-name: loadp;
+    animation-duration: 1s;
+}
+@keyframes loadp {
+    from {top:-200px;}
+    to {top:-35px;}
+}
+.smal{
+  width: 300px;
+  padding: 7px 30px;
+}
+.smal img{
+      position: absolute;
+    top: 20px;
+
+}
+.smal  h3 a{
+      position: relative;
+    left: 45px;
+        cursor: pointer;
+}
+.black{
+    color: #000000;
+  }
+.smal:hover{
+   background: #6fc596;
+}
+.left{
+  left: 20px;
+    position: fixed;
+    top: -35px;
+}
+.pf{
+    background: #d2cdcd;
+    width: 100%;
+    padding: 0px 8px;
+    border-radius: 11px;
+}
+.pf h3 {
+    position: relative;
+    top: -30px;
+    left: 60px;
+}
+.pf img {
+      position: relative;
+    top: 16px;
+
+}
+.smolfont{
+  font-size:14px;
+}
+.backimg{
+      padding: 0px 0px 17px;
+    cursor: pointer;
+}
+.leftform{
+  position: fixed;
+    left: 0;
+    height: 230px;
+    width: 70px;
+    border-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0px;
+    background: #fff;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    animation-name: loadleft;
+    animation-duration: 1.5s;
+}
+@keyframes loadleft {
+    from {left:-200px;}
+    to {left:0px;}
+}
+.leftform img{
+  cursor: pointer;
+}
+.leftform img:hover{
+transform: scale(1.2);
+}
+.min{
+  max-width: 991px;
+
+      top: -30px;
+          border-radius: 15px;
+    min-width: 400px;
+
+}
+ .topbar{
+      top: 1px;
+    margin: auto;
+    width: 70%;
+    max-width: 100%;
+    height: 76px;
+       padding:37px 30%;
+    border-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+ }
+.leftform div{
+  padding: 20px 10px;
+      position: relative;
+    animation-name: loadleft;
+
+}
+.leftform div:nth-child(1){
+   animation-duration: 1.7s;
+  }
+  .leftform div:nth-child(2){
+   animation-duration: 2s;
+  }
+    .leftform div:nth-child(3){
+   animation-duration: 2.3s;
+  }
+
+  .pup{
+     background: #504444;
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    left: 60px;
+    border-radius: 7px;
+    color: #fff;
+    padding: 13px;
+    top: 12px;
+ opacity: 0;
+
+
+  }
+.smolinput{
+    float: left;
+    padding: 0px 10px;
+}
+
+ .ply {
+
+ animation-name: msg;
+ animation-delay: 0.5s;
+        animation-duration: 0.5s;
+     animation-iteration-count: 1;
+       animation-fill-mode:forwards;
+       animation-timing-function:linear;
+  }
+  .retuern{
+     animation-name: msgback;
+        animation-duration: 0.5s;
+     animation-iteration-count: 1;
+       animation-fill-mode:forwards;
+       animation-timing-function:linear;
+  }
+  .pup div{
+       width: 30px;
+    height: 30px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #504444;
+    padding: 0px;
+    left: -40px;
+    top: -5px;
+    animation-name: none;
+
+
+  }
+  .txt{
+        width: 200px;
+    position: absolute;
+    color: #fff;
+    left: 70px;
+    top: 6px;
+    opacity: 0;
+  }
+  .textAnim{
+       animation-name: textan;
+       animation-delay: 0.9s;
+        animation-duration: 0.5s;
+     animation-iteration-count: 1;
+       animation-fill-mode:forwards;
+       animation-timing-function:linear;
+  }
+
+    .textretuern{
+     animation-name: textbk;
+        animation-duration: 0.5s;
+     animation-iteration-count: 1;
+       animation-fill-mode:forwards;
+       animation-timing-function:linear;
+  }
+@keyframes msg {
+from{width: 0px;
+  opacity: 0;
+}
+to{width: 200px;
+opacity: 1;}
+  }
+  @keyframes msgback {
+from{width: 200px;
+  opacity: 1;
+}
+to{width:  0px;
+opacity: 0;}
+  }
+    @keyframes textan {
+from{  opacity: 0;
+}
+to{ opacity: 1;}
+  }
+    @keyframes textbk {
+from{  opacity: 0.5;
+}
+to{ opacity: 0;}
+  }
+  .hid{
+      animation-name: end;
+        animation-duration: 0.5s;
+         animation-iteration-count: 1;
+       animation-fill-mode:forwards;
+       animation-timing-function:linear;
+  }
+     @keyframes end {
+from{  opacity: 1;
+  height: 46px;
+}
+to{ opacity: 0;
+height: 0px;}
+  }
+  .myul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.results{
+      max-width: 50%;
+    top: -30px;
+    border-radius: 15px;
+}
+.results ul {
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #707070;
+}
+.results ul{
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #707070;
+}
+.results ul:nth-child(1) {
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+}
+.results ul li{
+      float: left;
+    width: 25%;
+    border: 1px solid white;
+   max-height: 45px;
+}
+.results a {
+     display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.myul li {
+float: left;
+    width: 10%;
+    border: 1px solid white;
+    max-height: 45px;
+}
+.myul li:nth-child(4){
+    width: 30%;
+}
+.myul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.myRow{
+   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #647a6a;
+}
+
+.myRow li {
+float: left;
+   width: 10%;
+    border: 1px solid white;
+   max-height: 45px;
+}
+.myRow input {
+      float: left;
+    width: 10%;
+    border: 1px solid white;
+    max-height: 45px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+        font-size: 15px;
+        background: #5f5f5f;
+}
+.myRow li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 1px;
+    text-decoration: none;
+    height: 54px;
+
+}
+
+.myRow li:nth-child(4){
+ width: 30%;
+}
+.myRow input:nth-child(5){
+ width: 30%;
+}
+.message{
+  right: 0px;
+    position: fixed;
+    top: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 20px 30px;
+    animation-name: showMsg;
+    animation-duration: 4s;
+
+}
+.message img{
+  top: 5px;
+}
+.message h4 a{
+      top: 10px;
+    position: absolute;
+    left: 75px;
+
+}
+@keyframes showMsg{
+  from{right: -9000px}
+  to{right: 0px}
+}
+.form select {
+    width: 40%;
+    height: 25px;
+    border-radius: 5px;
+    position: absolute;
+    top: 57px;
+    left: 154px;
+}
+.mbutton {
+    border-radius: 10px;
+    height: 35px;
+    border: 0px;
+    background: #84c884;
+    padding: 0 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 51px;
+    right: 34px;
+}
+.mbutton:hover{
+  background: #aae3aa;
+}
+.sbutton{
+background: #78ca95;
+    border: 0px;
+    width: 130px;
+    border-radius: 10px;
+     cursor: pointer;
+     height: 40px;
+}
+.sbutton img{
+    left: -45px;
+    position: relative;
+    top: 2px;
+}
+.sbutton h3 {
+  position: relative;
+    top: -46px;
+    left: 10px;
+}
+.form textarea{
+      resize: vertical;
+    border-radius: 10px;
+    height: 150px;
+}
+text,td,input,form-control{
+  font-size: 14px;
+}
