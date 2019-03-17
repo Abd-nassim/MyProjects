@@ -1,0 +1,247 @@
+.header{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:99%;
+	padding: 10px;
+	height: 50px;
+	background: rgba(197, 239, 247, 0.5);
+	z-index:1;
+}
+.dep_name{
+	width:300px;
+		font-size: 20px;
+
+}
+
+.main{
+	float:top;
+	font-size: 22px;
+}
+
+#Logout{
+	background-color: #006666; 
+    border: none;
+    margin:1px;
+    color: cyan;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    width:70px;
+    font-size: 16px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+}
+#Logout:hover{
+	border-radius:10px;
+	background-color: #333;
+	color: white;
+}
+#config{
+	position:fixed;
+	top:20px;
+	right:20px;
+	padding:5px;
+	font-size: 16px;
+    text-align:center;	 
+	background-color:#1A1A1A;
+	color:#D1D1D1;
+	width:120px;
+	height:25px;
+	border-radius: 0px 0px 5% 5%;
+	margin:1px;
+}
+
+#config_slide{
+	position:fixed;
+	top:45px;
+	right:20px;
+	padding:5px;
+	font-size: 16px;
+    text-align:center;	 
+	background-color:#1A1A1A;
+	color:#D1D1D1;
+	width:120px;
+	border-radius: 0px 0px 5% 5%;
+	margin:1px;
+	display:none;
+}
+
+.settings{
+	padding: 5px;
+	color:#E4F1FE;
+	background: rgba(171, 183, 183, 0.8);
+	padding:10px;
+	font-size: 22px;
+}
+
+
+.nav{
+	position: fixed;
+	margin: 75px 0px;
+	width: 120px;
+	padding:10px;
+	background: rgba(197, 239, 247, 0.5);
+
+}
+
+.content{
+	float:left;
+	margin:65px 140px;
+	padding:10px;
+}
+
+.input_asg{
+	font-size:20px;
+	width:70px;
+	text-align: center;
+}
+
+.input_name{
+	font-size:20px;
+	width:250px;
+	text-align: center;
+}
+
+.input_short{
+	font-size:20px;
+	width:60px;
+	text-align: center;
+}
+
+.input_small{
+	font-size:20px;
+	width:150px;
+	text-align: center;
+}
+.input_medium{
+	font-size:20px;
+	width:230px;
+	text-align: center;
+}
+
+.input_big{
+	font-size:20px;
+	width:350px;
+	text-align: center;
+}
+
+/*
+tr:nth-child(odd) {
+    background-color: #3CBC8D;
+    font-color:#3CBC8D;
+}
+
+tr:nth-child(1) {
+    background-color: #3CBC8D;
+    color:white;
+}
+*/
+
+th{
+	background-color: #81CFE0;
+    color:#22313F;
+    font-size: 20px;
+}
+
+.input_update{
+	font-size:20px;
+	width:90px;
+	text-align: center;
+}
+
+.update_button{
+	float:top;
+	background-color: #81CFE0;
+    border: none;
+    margin:2px;
+    color: #22313F;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    width:100px;
+    font-size: 16px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+}
+.update_button:hover{
+	background-color: #22313F;
+	color: #81CFE0;
+}
+
+.edit_button{
+	float:top;
+    background-image:url("Edit_1.png");
+    margin:2px;
+    width:30px;
+    height:30px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+	background-size:100%;
+}
+.edit_button:hover{
+    background-image:url("Edit_2.png");
+}
+
+.delete_button{
+	float:top;
+    background-image:url("Garbage_1.png");
+    margin:2px;
+    width:30px;
+    height:30px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+	background-size:100%;
+}
+.delete_button:hover{
+    background-image:url("Garbage_2.png");
+}
+
+.add_button{
+	float:top;
+    background-image:url("Add_1.png");
+    margin:2px;
+    width:30px;
+    height:30px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+	background-size:100%;
+}
+.add_button:hover{
+    background-image:url("Add_2.png");
+}
+
+
+.ajouter_button{
+	float:top;
+	background-color: #006666; 
+    border: none;
+    margin:2px;
+    color: cyan;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    width:100px;
+    font-size: 16px;
+    border-radius:2px;
+	transition-duration: 0.4s; 
+}
+.ajouter_button:hover{
+	border-radius:10px;
+	background-color: #333;
+	color: white;
+}
+
+body{
+	background-image: url("wall.jpg");
+	background-attachment: fixed;
+	background-size:100%;
+
+}
+
+.footer{
+	clear:both;
+	background: rgba(197, 239, 247, 0.5);
+	padding: 10px;
+	text-align: center;
+}

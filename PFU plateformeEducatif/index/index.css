@@ -1,0 +1,105 @@
+.header{
+	margin: 0px;
+	padding: 10px;
+	background: rgba(238, 238, 238, 0.5);
+	border:solid;
+	border-bottom: none;
+	border-color:#777;
+	text-align:center;
+	width:600px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+body{
+	font-family: tahoma;
+	background-image: url("wall.jpg");
+	background-attachment: fixed;
+
+
+}
+
+input{
+	padding: 10px;
+	margin:10px;
+}
+
+#login{
+	border:solid;
+	border-color: #999;
+	border-width: 0px 1px 1px 0px;
+	border-radius: 4px 4px 16px 16px;
+	background-color: #F9BF3B;
+	font-size:22px;
+	padding: 8px 16px;
+}
+
+#login:hover{
+	background-color: #F9690E;
+}
+
+.inner_main{
+	float:left;
+	border:gray;
+	width:20%;
+	background-color:green;
+	text-align:center;
+	margin:1%;
+	padding:1%;
+}
+
+.inner_main h1{
+	size:100%;
+
+}
+
+#header li {
+    border: 1px solid;
+    border-bottom-width: 0;
+    margin: 0 5px 0 0;
+
+}
+
+.interface_button{
+	padding:0px 5px 5px 5px;
+	height: 50px;
+	width:600px;
+
+}
+
+
+
+.button_i{
+	float:right;
+	background-color: #ABB7B7;
+	color: white;
+    border: none;
+    margin:0px 5px 5px 5px;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius:2px;
+	transition-duration: 0.4s;
+	font-size:28px;
+}
+
+.button_i:hover{
+	background-color: white;
+	color: #ABB7B7;
+}
+
+.content {  
+	width:620px;
+	background: rgba(238, 238, 238, 0.5);
+}
+
+.interface{
+	border-radius: 0px 0px 5px 5px;
+	border-top-radius: 0px;
+	padding:10px;
+	border: solid;
+	border-top:none;
+	border-color: #777;
+
+}
+

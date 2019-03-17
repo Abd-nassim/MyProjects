@@ -1,0 +1,597 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.11
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Mar 31 Mai 2016 à 16:08
+-- Version du serveur :  5.6.21
+-- Version de PHP :  5.6.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données :  `project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `annee`
+--
+
+CREATE TABLE IF NOT EXISTS `annee` (
+`id_annee` int(11) NOT NULL,
+  `nom_annee` varchar(30) NOT NULL,
+  `specialite` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `annee`
+--
+
+INSERT INTO `annee` (`id_annee`, `nom_annee`, `specialite`) VALUES
+(1, 'L2', ''),
+(2, 'L3', 'ISIL'),
+(3, 'L3', 'SI');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `departement`
+--
+
+CREATE TABLE IF NOT EXISTS `departement` (
+`id_departement` int(11) NOT NULL,
+  `nom_dep` varchar(100) NOT NULL,
+  `pass_dep` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `departement`
+--
+
+INSERT INTO `departement` (`id_departement`, `nom_dep`, `pass_dep`) VALUES
+(1, 'informatique', 'info');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enseignant`
+--
+
+CREATE TABLE IF NOT EXISTS `enseignant` (
+  `matricule_ens` varchar(30) NOT NULL,
+  `password_ens` varchar(30) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `id_departement` decimal(3,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `enseignant`
+--
+
+INSERT INTO `enseignant` (`matricule_ens`, `password_ens`, `nom`, `prenom`, `email`, `id_departement`) VALUES
+('E160016', 'E160016', 'ABBAS', 'Nacira', 'abbas.university10@gmail.com', '1'),
+('E160017', 'E160017', 'BAL', 'Kamel', 'KamelBall@gmail.com', '1'),
+('E160018', 'E160018', 'BENNOUAR', 'Djamel', 'dbennouar@gmail.com', '1'),
+('E160019', 'E160019', 'BOUCETTA', 'Mohamed', 'BOUCETTAMohamed.gmail.com', '1'),
+('E160020', 'E160020', 'BOUDJELABA', 'Hakim', 'boudj.ens@gmail.com', '1'),
+('E160021', 'E160021', 'BRAHIMI', 'Farida', 'BRAHIMIFarida@gmail.com', '1'),
+('E160022', 'E160022', 'RAMDANI', 'Mohamed', 'm.ramdani@univ-bouira.dz', '1'),
+('E160023', 'E160023', 'RADJI', 'Nabila', 'RADJI.dzNabila', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etudiant`
+--
+
+CREATE TABLE IF NOT EXISTS `etudiant` (
+  `matricule_etu` varchar(20) NOT NULL,
+  `password_etu` varchar(30) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `id_groupe` decimal(3,0) NOT NULL,
+  `moyenne_general` decimal(4,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`matricule_etu`, `password_etu`, `nom`, `prenom`, `id_groupe`, `moyenne_general`) VALUES
+('Q140026', 'Q140026', 'SEBAA', 'Aymen Moh Nabil', '3', '0.00'),
+('Q140091', 'Q140091', 'abderrahman', 'nassim', '3', '0.00'),
+('Q140118', 'Q140118', 'HAMICHE', 'MAGSEN', '3', '0.00'),
+('Q140235', 'Q140235', 'Haddouche', 'Soumia', '3', '0.00'),
+('Q14T008', 'Q14T008', 'TELDJOUNE', 'Said', '3', '0.00'),
+('Q150091', 'Q150091', 'BOHRI', 'MAHDI', '2', '0.00'),
+('Q160091', 'Q160091', 'IDIR', 'TALEM', '1', '0.00'),
+('Q250016', 'Q250016', 'valentine', 'Ace', '5', '0.00'),
+('Q254566', 'Q254566', 'boudraf', 'youcef', '4', '0.00'),
+('Q254568', 'Q254568', 'hadouche', 'badrou', '5', '0.00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etudiant_2`
+--
+
+CREATE TABLE IF NOT EXISTS `etudiant_2` (
+  `matricule` varchar(20) NOT NULL,
+  `nom` varchar(20) NOT NULL,
+  `prenom` varchar(20) NOT NULL,
+  `groupe` int(2) NOT NULL,
+  `annee` varchar(2) NOT NULL,
+  `specialite` varchar(20) DEFAULT NULL,
+  `mdp` varchar(15) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `etudiant_2`
+--
+
+INSERT INTO `etudiant_2` (`matricule`, `nom`, `prenom`, `groupe`, `annee`, `specialite`, `mdp`) VALUES
+('Q130119', 'ASSAM', 'Amar', 1, 'L3', 'ISIL', 'Q130119'),
+('Q130158', 'BAIRI', 'Youcef', 1, 'L3', 'ISIL', 'Q130158'),
+('Q130074', 'BELKACEM', 'Amir', 1, 'L3', 'ISIL', 'Q130074'),
+('Q130068', 'BELLILI', 'Amira', 1, 'L3', 'ISIL', 'Q130068'),
+('Q130050', 'BEN TOUTAH', 'Yasmine', 1, 'L3', 'ISIL', 'Q130050'),
+('Q12T010', 'BENALI', 'Meriem', 1, 'L3', 'ISIL', 'Q12T010'),
+('Q130004', 'BENMADANI', 'Khaoula', 1, 'L3', 'ISIL', 'Q130004'),
+('Q13T020', 'BENTALEB', 'Kamelia', 1, 'L3', 'ISIL', 'Q13T020'),
+('Q130095', 'BOUABID', 'Mayada', 1, 'L3', 'ISIL', 'Q130095'),
+('Q130106', 'BOUCHENTOUF', 'Abdelouahab', 1, 'L3', 'ISIL', 'Q130106'),
+('Q130159', 'BOUDRAF', 'Youcef', 1, 'L3', 'ISIL', 'Q130159'),
+('Q130048', 'BOUMAZA', 'Othmane', 1, 'L3', 'ISIL', 'Q130048'),
+('Q130088', 'CHIKH', 'Kamel', 1, 'L3', 'ISIL', 'Q130088'),
+('Q130037', 'DJAID ', 'Achraf', 1, 'L3', 'ISIL', 'Q130037'),
+('Q130024', 'GASMI', 'Naima', 1, 'L3', 'ISIL', 'Q130024'),
+('Q130093', 'GHODEBANE', 'Hassiba', 1, 'L3', 'ISIL', 'Q130093'),
+('Q130040', 'HAMLA', 'Abdelnour', 1, 'L3', 'ISIL', 'Q130040'),
+('Q130085', 'HOCINE', 'Kahina', 1, 'L3', 'ISIL', 'Q130085'),
+('Q130153', 'IDER ', 'Amine', 1, 'L3', 'ISIL', 'Q130153'),
+('Q130053', 'KHITER', 'Ali', 1, 'L3', 'ISIL', 'Q130053'),
+('Q130056', 'LAKHAL', 'Khedidja', 1, 'L3', 'ISIL', 'Q130056'),
+('Q130133', 'LARBI', 'Fella', 1, 'L3', 'ISIL', 'Q130133'),
+('Q13T010', 'LAYACHI', 'Fatima Zohra', 1, 'L3', 'ISIL', 'Q13T010'),
+('Q130104', 'MAHFOUD', 'Selma', 1, 'L3', 'ISIL', 'Q130104'),
+('Q130080', 'MOKDAD', 'Mohamed', 1, 'L3', 'ISIL', 'Q130080'),
+('Q130135', 'SARI', 'Chabane', 1, 'L3', 'ISIL', 'Q130135'),
+('Q130042', 'SETTI', 'Rabah', 1, 'L3', 'ISIL', 'Q130042'),
+('Q130046', 'TOUHAMI', 'Hamida', 1, 'L3', 'ISIL', 'Q130046'),
+('Q990002', 'AISSAOUI', 'Lyes', 1, 'L3', 'ISIL', 'Q990002'),
+('Q920001', 'AYADI', 'Mustapha', 1, 'L3', 'ISIL', 'Q920001'),
+('Q980006', 'BACHA', 'Saada', 1, 'L3', 'ISIL', 'Q980006'),
+('Q990003', 'BELAID', 'Nassima', 1, 'L3', 'ISIL', 'Q990003'),
+('G980011', 'BELKACEMI', 'Adel', 1, 'L3', 'ISIL', 'G980011'),
+('Q980005', 'GACEM', 'Mustapha', 1, 'L3', 'ISIL', 'Q980005'),
+('Q940001', 'HAMICHE', 'Farid', 1, 'L3', 'ISIL', 'Q940001'),
+('Q960001', 'HAOUES', 'Messaouda', 1, 'L3', 'ISIL', 'Q960001'),
+('Q010001', 'HOCINE', 'Ahcene', 1, 'L3', 'ISIL', 'Q010001'),
+('G980002', 'NOURINE', 'Abdelghani', 1, 'L3', 'ISIL', 'G980002'),
+('Q980004', 'RECHAM', 'Ouardia', 1, 'L3', 'ISIL', 'Q980004'),
+('G990007', 'ZEKHMI', 'Salah', 1, 'L3', 'ISIL', 'G990007'),
+('Q980003', 'ZENATI', 'Fatima', 1, 'L3', 'ISIL', 'Q980003'),
+('Q130052', 'AOUADI ', 'AISSA MAHDI', 1, 'L2', '', 'Q130052'),
+('Q12R001', 'AHMED KHODJA', 'Imene', 0, 'L3', 'SI', 'Q12R001'),
+('Q12T012', 'ALIGUI', 'Ismail', 0, 'L3', 'SI', 'Q12T012'),
+('Q130094', 'ARIBI', 'BILAL', 0, 'L3', 'SI', 'Q130094'),
+('Q130041', 'ATIK-HAMOUD', 'MOHAMED RAOUF', 0, 'L3', 'SI', 'Q130041'),
+('Q130113', 'BAGHDADI', 'ZINEB', 0, 'L3', 'SI', 'Q130113'),
+('Q130147', 'BELLILI', 'MAHMOUD', 0, 'L3', 'SI', 'Q130147'),
+('Q13T025', 'BEN ABBAS', 'ROUMEISSA', 0, 'L3', 'SI', 'Q13T025'),
+('Q130030', 'BEN ZITOUNE', 'AHMED', 0, 'L3', 'SI', 'Q130030'),
+('Q130130', 'BOUKRIF', 'FADHMA', 0, 'L3', 'SI', 'Q130130'),
+('Q130065', 'BOUSBAINE', 'KARIM', 0, 'L3', 'SI', 'Q130065'),
+('Q130124', 'DAHMANI', 'SAID', 0, 'L3', 'SI', 'Q130124'),
+('Q13T008', 'DERMOUCHE', 'ROKIA', 0, 'L3', 'SI', 'Q13T008'),
+('Q130015', 'DJEBRI', 'LAMINE', 0, 'L3', 'SI', 'Q130015'),
+('Q130044', 'GACI', 'DEHYA', 0, 'L3', 'SI', 'Q130044'),
+('Q130144', 'GUEDIFA', 'KHEREDDINE', 0, 'L3', 'SI', 'Q130144'),
+('Q12T005', 'HABET', 'MOHAMED', 0, 'L3', 'SI', 'Q12T005'),
+('Q130083', 'HADJADJ', 'ABDELKRIM', 0, 'L3', 'SI', 'Q130083'),
+('Q130125', 'HAMMADI', 'SOFIANE', 0, 'L3', 'SI', 'Q130125'),
+('Q130012', 'HAMOUDI', 'BADREDDINE', 0, 'L3', 'SI', 'Q130012'),
+('Q11T001', 'KALOUNE', 'SALIM', 0, 'L3', 'SI', 'Q11T001'),
+('Q130165', 'KESSOURI', 'NACER EDDINE', 0, 'L3', 'SI', 'Q130165'),
+('Q130029', 'KIHAL', 'REDOUANE', 0, 'L3', 'SI', 'Q130029'),
+('Q130003', 'LABANDJI', 'BESSMA', 0, 'L3', 'SI', 'Q130003'),
+('Q130100', 'LAMRAOUI', 'MOURAD', 0, 'L3', 'SI', 'Q130100'),
+('Q130092', 'LOKMANE', 'HADJER', 0, 'L3', 'SI', 'Q130092'),
+('Q130070', 'MERDOUD', 'KENZA', 0, 'L3', 'SI', 'Q130070'),
+('Q130060', 'OULMI', 'MEHDI', 0, 'L3', 'SI', 'Q130060'),
+('Q130005', 'ROUAM', 'RANIA', 0, 'L3', 'SI', 'Q130005'),
+('Q13T018', 'SAIBI', 'IBRAHIM', 0, 'L3', 'SI', 'Q13T018'),
+('Q130039', 'SIAM', 'ROKIA', 0, 'L3', 'SI', 'Q130039'),
+('Q13T013', 'TAMOURT', 'HAMOUCHE', 0, 'L3', 'SI', 'Q13T013'),
+('Q13T006', 'ATTIG', 'BILAL', 0, 'L3', 'SI', 'Q13T006'),
+('Q140237', 'BABOUCHE', 'ABDENNOUR', 1, 'L2', '', 'Q140237'),
+('Q140161', 'BAY', 'ZAHRA', 1, 'L2', '', 'Q140161'),
+('Q140035', 'BAZIZ', 'DJAMILA', 1, 'L2', '', 'Q140035'),
+('Q140222', 'BELAID', 'SEKOURA', 1, 'L2', '', 'Q140222'),
+('Q140110', 'BOURAS', 'DEHIA', 1, 'L2', '', 'Q140110'),
+('Q130049', 'CHAREFI', 'HAKIM', 1, 'L2', '', 'Q130049'),
+('Q140008', 'CHEDRI', 'MAAMEUR SLIMANE', 1, 'L2', '', 'Q140008'),
+('Q140127', 'DJEDDI', 'ABDELMALEK', 1, 'L2', '', 'Q140127'),
+('Q140027', 'FELLAK', 'SAMIA', 1, 'L2', '', 'Q140027'),
+('Q140171', 'GUENOUNE', 'KHEIR EDDINE', 1, 'L2', '', 'Q140171'),
+('Q140014', 'HABOUSSI', 'OMAR', 1, 'L2', '', 'Q140014'),
+('Q12T011', 'HADID', 'WALID', 1, 'L2', '', 'Q12T011'),
+('Q14T016', 'HADJ RABAH', 'SABRINA', 1, 'L2', '', 'Q14T016'),
+('Q14T011', 'HANICHE', 'KARIM', 1, 'L2', '', 'Q14T011'),
+('Q140167', 'HOUARI', 'DYHIA', 1, 'L2', '', 'Q140167'),
+('Q140093', 'KETTAB', 'MESSAOUDA', 1, 'L2', '', 'Q140093'),
+('Q10T001', 'LOUNIS ', 'AYOUB', 1, 'L2', '', 'Q10T001'),
+('Q140192', 'MAIZ', 'ANIS', 1, 'L2', '', 'Q140192'),
+('Q140090', 'MERZOUK', 'KAHINA', 1, 'L2', '', 'Q140090'),
+('Q140100', 'NOUARI', 'DJAHIDA', 1, 'L2', '', 'Q140100'),
+('Q140202', 'REMMAK', 'CHAHIRA', 1, 'L2', '', 'Q140202'),
+('Q140031', 'REZKI', 'TASSADIT', 1, 'L2', '', 'Q140031'),
+('Q140052', 'SAIDI', 'YASMINE', 1, 'L2', '', 'Q140052'),
+('Q140142', 'SAOUDI', 'MABROUK ZAKARIA', 1, 'L2', '', 'Q140142'),
+('Q140121', 'TADJINE', 'NESRINE', 1, 'L2', '', 'Q140121'),
+('Q140194', 'TALEM', 'IDIR', 1, 'L2', '', 'Q140194'),
+('Q140030', 'TRIDI', 'OUALID', 1, 'L2', '', 'Q140030'),
+('Q140122', 'ZAHOUANI', 'SARA', 1, 'L2', '', 'Q140122'),
+('Q140033', 'ZAOUI', 'FAIROUZ', 1, 'L2', '', 'Q140033'),
+('Q12T009', 'BENYAHIA', 'MOHAMED', 0, 'L2', '', 'Q12T009'),
+('Q140228', 'BOHRI', 'MOHAMED EL MAHDI', 0, 'L2', '', 'Q140228'),
+('Q140137', 'BOURKAIB', 'FATMA ZOHRA', 0, 'L2', '', 'Q140137'),
+('Q140221', 'BOUSSIGA', 'DJAMEL EDDINE', 0, 'L2', '', 'Q140221'),
+('Q14T025', 'BRADAI', 'ABDENNOUR', 0, 'L2', '', 'Q14T025'),
+('Q140145', 'CHABANI', 'AYOUB', 0, 'L2', '', 'Q140145'),
+('Q140232', 'CHELLALI', 'TAREK', 0, 'L2', '', 'Q140232'),
+('Q140129', 'DAHOU', 'HADDA', 0, 'L2', '', 'Q140129'),
+('Q140245', 'DERBAL', 'SOFIA', 0, 'L2', '', 'Q140245'),
+('Q140047', 'DJOUADI', 'CHERIF', 0, 'L2', '', 'Q140047'),
+('Q140016', 'DJOUMAGH', 'MALIKA', 0, 'L2', '', 'Q140016'),
+('Q140166', 'DRIZI', 'SOURIA', 0, 'L2', '', 'Q140166'),
+('Q140144', 'GOURA', 'ATIKA', 0, 'L2', '', 'Q140144'),
+('Q140011', 'HADDOUCHE', 'ANIA', 0, 'L2', '', 'Q140011'),
+('Q140226', 'HAMID', 'MOUNA', 0, 'L2', '', 'Q140226'),
+('Q140007', 'HAMITOUCHE', 'MOHAMED RIAD', 0, 'L2', '', 'Q140007'),
+('Q14T019', 'HELLAL', 'CHAHINAZ', 0, 'L2', '', 'Q14T019'),
+('Q140068', 'IZEMOUR', 'LAMIA', 0, 'L2', '', 'Q140068'),
+('Q13T011', 'KAIDI', 'FATMA', 0, 'L2', '', 'Q13T011'),
+('Q140074', 'KAZOUIT', 'SID ALI', 0, 'L2', '', 'Q140074'),
+('Q140078', 'KERROUA', 'AREZKI', 0, 'L2', '', 'Q140078'),
+('Q140132', 'KHELFANE', 'RABAH', 0, 'L2', '', 'Q140132'),
+('Q140120', 'KHITER', 'HAYAT', 0, 'L2', '', 'Q140120'),
+('Q140T010', 'KHITER', 'SARA', 0, 'L2', '', 'Q140T010'),
+('Q14T012', 'MAAREF GUALIA', 'ABDELHAK', 0, 'L2', '', 'Q14T012'),
+('Q130036', 'MALKI', 'GHALIA', 0, 'L2', '', 'Q130036'),
+('Q140154', 'MEBARKI', 'LALDJA', 0, 'L2', '', 'Q140154'),
+('Q140067', 'MERZOUK', 'SABRINA', 0, 'L2', '', 'Q140067'),
+('Q140037', 'MESSAOUDI', 'LAHNA', 0, 'L2', '', 'Q140037'),
+('Q140215', 'MOHAMMEDI', 'MOUNA', 0, 'L2', '', 'Q140215'),
+('Q140025', 'MOSTEGHANEMI', 'SORAYA', 0, 'L2', '', 'Q140025'),
+('Q140200', 'NACERI', 'SIHAM', 0, 'L2', '', 'Q140200'),
+('Q140169', 'RABEHI', 'ROFAIDA', 0, 'L2', '', 'Q140169'),
+('Q130087', 'RAHMOUNI', 'AMINE', 0, 'L2', '', 'Q130087'),
+('Q140153', 'SAAD', 'FATMA ZOHRA', 0, 'L2', '', 'Q140153'),
+('Q130098', 'SEMMAR', 'FATEH', 0, 'L2', '', 'Q130098'),
+('Q140091', 'ABDERAHMAN', 'MOHAMED NASSIM', 0, 'L2', '', 'Q140091'),
+('Q140069', 'AISSAOUI', 'RAHIMA', 0, 'L2', '', 'Q140069'),
+('Q140176', 'ALLOUACHE', 'CHAHIRA', 0, 'L2', '', 'Q140176'),
+('Q140013', 'ALLOUACHE', 'KAHINA', 0, 'L2', '', 'q140013'),
+('Q140149', 'BOUCHENAK', 'SIHAM', 0, 'L2', '', 'Q140149'),
+('Q140148', 'BOUDEBZA', 'HOUDA', 0, 'L2', '', 'Q140148'),
+('Q140187', 'BOULIL', 'DALILA', 0, 'L2', '', 'Q140187'),
+('Q140112', 'BOURKAIB', 'BRAHIM', 0, 'L2', '', 'Q140112'),
+('Q140024', 'CHIBANE', 'ABDELMOUMEN', 0, 'L2', '', 'Q140024'),
+('Q140157', 'DAHMANI', 'SOUMIA', 0, 'L2', '', 'Q140157'),
+('Q140087', 'DAOUI', 'NADIA', 0, 'L2', '', 'Q140087'),
+('Q140139', 'DERRIDJI', 'MOHAMED LAMINE', 0, 'L2', '', 'Q140139'),
+('Q130160', 'GUELLAL', 'YOUCEF', 0, 'L2', '', 'Q130160'),
+('Q12T014', 'GUENDEZ', 'NOUREDDINE', 0, 'L2', '', 'Q12T014'),
+('Q140089', 'HADDOUCHE', 'RABAH', 0, 'L2', '', 'Q140089'),
+('Q140235', 'HADDOUCHE', 'SOUMIA', 0, 'L2', '', 'Q140235'),
+('Q140094', 'HADID', 'CHERIFA', 0, 'L2', '', 'Q140094'),
+('Q140118', 'HAMICHE', 'MAGSEN', 0, 'L2', '', 'Q140118'),
+('Q140206', 'HAMOUDA', 'AMINA', 0, 'L2', '', 'Q140206'),
+('Q140071', 'LARBI', 'MEROUA', 0, 'L2', '', 'Q140071'),
+('Q140010', 'MEDJRI', 'KAHINA', 0, 'L2', '', 'Q140010'),
+('Q130078', 'MESLEM', 'YASMINE', 0, 'L2', '', 'Q130078'),
+('Q12T006', 'MEZIANE', 'HAMZA', 0, 'L2', '', 'Q12T006'),
+('Q130128', 'NOUARI', 'ZINEB', 0, 'L2', '', 'Q130128'),
+('Q140070', 'RAFED', 'RABIAA', 0, 'L2', '', 'Q140070'),
+('Q140026', 'SEBAA', 'AYMEN MOHAMED NABIL', 0, 'L2', '', 'Q140026'),
+('Q130054', 'SEBTI', 'IMAD', 0, 'L2', '', 'Q130054'),
+('Q140147', 'SEHTALI', 'IMANE', 0, 'L2', '', 'Q140147'),
+('Q140021', 'SELMANE', 'HAYETTE', 0, 'L2', '', 'Q140021'),
+('Q140234', 'SELMI', 'SMAIL', 0, 'L2', '', 'Q140234'),
+('Q130071', 'SEMACHE', 'FAIZA', 0, 'L2', '', 'Q130071'),
+('Q14T008', 'TELDJOUNE', 'SAID', 0, 'L2', '', 'Q14T008'),
+('Q140114', 'YAHIAOUI', 'FARIZA', 0, 'L2', '', 'Q140114'),
+('Q140212', 'ZAMOUM', 'HAFIDHA', 0, 'L2', '', 'Q140212'),
+('Q140209', 'ZEGHAD', 'KHALISSA', 0, 'L2', '', 'Q140209');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `evaluation`
+--
+
+CREATE TABLE IF NOT EXISTS `evaluation` (
+`id_evaluation` int(11) NOT NULL,
+  `type_evaluation` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `evaluation`
+--
+
+INSERT INTO `evaluation` (`id_evaluation`, `type_evaluation`) VALUES
+(1, '66%/33%'),
+(2, '50%/50%');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `groupe`
+--
+
+CREATE TABLE IF NOT EXISTS `groupe` (
+`id_groupe` int(11) NOT NULL,
+  `num_groupe` decimal(2,0) DEFAULT NULL,
+  `id_annee` decimal(2,0) NOT NULL,
+  `id_departement` decimal(2,0) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `groupe`
+--
+
+INSERT INTO `groupe` (`id_groupe`, `num_groupe`, `id_annee`, `id_departement`) VALUES
+(1, '1', '1', '1'),
+(2, '2', '1', '1'),
+(3, '3', '1', '1'),
+(4, '0', '2', '1'),
+(5, '0', '3', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `module`
+--
+
+CREATE TABLE IF NOT EXISTS `module` (
+`id_module` int(11) NOT NULL,
+  `nom_module` varchar(100) NOT NULL,
+  `coefficient` decimal(2,0) NOT NULL,
+  `credit` decimal(3,0) NOT NULL,
+  `matricule_ens` varchar(30) NOT NULL,
+  `id_departement` decimal(2,0) NOT NULL,
+  `id_annee` decimal(2,0) NOT NULL,
+  `type` decimal(2,0) NOT NULL,
+  `id_evaluation` decimal(2,0) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `module`
+--
+
+INSERT INTO `module` (`id_module`, `nom_module`, `coefficient`, `credit`, `matricule_ens`, `id_departement`, `id_annee`, `type`, `id_evaluation`) VALUES
+(1, 'AJEL', '1', '5', 'E160016', '1', '1', '2', '2'),
+(2, 'BDD', '2', '5', 'E160017', '1', '1', '1', '1'),
+(3, 'RES', '3', '5', 'E160018', '1', '1', '1', '1'),
+(4, 'TG', '2', '5', 'E160019', '1', '1', '2', '1'),
+(5, 'SE', '3', '5', 'E160020', '1', '1', '1', '1'),
+(6, 'GL', '2', '5', 'E160021', '1', '1', '2', '1'),
+(7, 'WEB', '3', '5', 'E160022', '1', '1', '3', '1'),
+(8, 'EN', '1', '5', 'E160023', '1', '1', '2', '1'),
+(9, 'BDA', '3', '5', 'E160022', '1', '2', '1', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `note`
+--
+
+CREATE TABLE IF NOT EXISTS `note` (
+  `matricule_etu` varchar(30) NOT NULL,
+  `id_module` decimal(3,0) NOT NULL,
+  `td` decimal(4,2) DEFAULT NULL,
+  `tp` decimal(4,2) DEFAULT NULL,
+  `examen` decimal(4,2) DEFAULT NULL,
+  `moyenne` decimal(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `note`
+--
+
+INSERT INTO `note` (`matricule_etu`, `id_module`, `td`, `tp`, `examen`, `moyenne`) VALUES
+('Q140026', '1', '16.00', '16.00', '14.00', '15.00'),
+('Q140026', '2', '16.00', '16.00', '16.00', '16.00'),
+('Q140026', '3', '18.00', '16.00', '14.00', '15.50'),
+('Q140026', '4', '18.00', '18.00', '16.00', '17.00'),
+('Q140026', '5', '18.00', '20.00', '16.00', '17.50'),
+('Q140026', '6', '18.00', '18.00', '16.00', '17.00'),
+('Q140026', '7', '14.00', '17.00', '16.00', '15.75'),
+('Q140026', '8', '14.00', '12.00', '16.00', '14.50'),
+('Q140091', '7', '4.00', '4.00', '12.00', '8.00'),
+('Q140118', '4', '14.00', '14.00', '0.00', '7.00'),
+('Q140118', '7', '4.00', '7.00', '0.00', '2.75'),
+('Q14T008', '3', '11.00', '11.00', '8.00', '9.50');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reclam`
+--
+
+CREATE TABLE IF NOT EXISTS `reclam` (
+`id_reclam` int(11) NOT NULL,
+  `matricule_etu` varchar(30) NOT NULL,
+  `id_module` decimal(2,0) NOT NULL,
+  `reclam_date` date NOT NULL,
+  `reclam_text` text NOT NULL,
+  `view` char(1) DEFAULT 'N'
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `reclam`
+--
+
+INSERT INTO `reclam` (`id_reclam`, `matricule_etu`, `id_module`, `reclam_date`, `reclam_text`, `view`) VALUES
+(72, 'Q140026', '7', '2016-05-22', 'Sa7a CHikh', 's'),
+(73, 'Q140026', '7', '2016-05-22', 'sa7a Aymen', 't'),
+(74, 'Q140026', '3', '2016-05-23', 'sa7a Res', 's'),
+(75, 'Q140026', '3', '2016-05-23', 'wach Aymen', 't'),
+(76, 'Q14T008', '3', '2016-05-25', 'Sa7a ana Said', 's'),
+(77, 'Q14T008', '3', '2016-05-25', 'yaw anba said', 'S'),
+(78, 'Q140026', '7', '2016-05-28', 'jhgjhgjkh', 's'),
+(79, 'Q140026', '7', '2016-05-28', 'ttrbgrbht', 't'),
+(80, 'Q140026', '7', '2016-05-29', 'sa7a cjil\nkh', 's'),
+(81, 'Q140026', '2', '2016-05-30', 'SAHIT ', 'S'),
+(82, 'Q140026', '2', '2016-05-30', 'SAHIT ', 'S'),
+(83, 'Q140026', '2', '2016-05-30', 'SAHIT ', 'S'),
+(84, 'Q140026', '2', '2016-05-31', 'mlkjgf', 's'),
+(85, 'Q140026', '2', '2016-05-31', '^poiuytrerthj,;', 't');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `type`
+--
+
+CREATE TABLE IF NOT EXISTS `type` (
+`type` int(11) NOT NULL,
+  `definition` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `type`
+--
+
+INSERT INTO `type` (`type`, `definition`) VALUES
+(1, 'TD+TP+EX'),
+(2, 'TD+EX'),
+(3, 'TP+EX'),
+(4, 'EX'),
+(5, 'TD'),
+(6, 'TP');
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `annee`
+--
+ALTER TABLE `annee`
+ ADD PRIMARY KEY (`id_annee`);
+
+--
+-- Index pour la table `departement`
+--
+ALTER TABLE `departement`
+ ADD PRIMARY KEY (`id_departement`);
+
+--
+-- Index pour la table `enseignant`
+--
+ALTER TABLE `enseignant`
+ ADD PRIMARY KEY (`matricule_ens`);
+
+--
+-- Index pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+ ADD PRIMARY KEY (`matricule_etu`);
+
+--
+-- Index pour la table `etudiant_2`
+--
+ALTER TABLE `etudiant_2`
+ ADD PRIMARY KEY (`matricule`);
+
+--
+-- Index pour la table `evaluation`
+--
+ALTER TABLE `evaluation`
+ ADD PRIMARY KEY (`id_evaluation`);
+
+--
+-- Index pour la table `groupe`
+--
+ALTER TABLE `groupe`
+ ADD PRIMARY KEY (`id_groupe`);
+
+--
+-- Index pour la table `module`
+--
+ALTER TABLE `module`
+ ADD PRIMARY KEY (`id_module`);
+
+--
+-- Index pour la table `note`
+--
+ALTER TABLE `note`
+ ADD PRIMARY KEY (`matricule_etu`,`id_module`);
+
+--
+-- Index pour la table `reclam`
+--
+ALTER TABLE `reclam`
+ ADD PRIMARY KEY (`id_reclam`);
+
+--
+-- Index pour la table `type`
+--
+ALTER TABLE `type`
+ ADD PRIMARY KEY (`type`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `annee`
+--
+ALTER TABLE `annee`
+MODIFY `id_annee` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `departement`
+--
+ALTER TABLE `departement`
+MODIFY `id_departement` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `evaluation`
+--
+ALTER TABLE `evaluation`
+MODIFY `id_evaluation` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `groupe`
+--
+ALTER TABLE `groupe`
+MODIFY `id_groupe` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT pour la table `module`
+--
+ALTER TABLE `module`
+MODIFY `id_module` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT pour la table `reclam`
+--
+ALTER TABLE `reclam`
+MODIFY `id_reclam` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+--
+-- AUTO_INCREMENT pour la table `type`
+--
+ALTER TABLE `type`
+MODIFY `type` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
