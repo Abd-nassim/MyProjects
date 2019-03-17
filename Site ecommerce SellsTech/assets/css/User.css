@@ -1,0 +1,93 @@
+.boxes{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.card:hover{
+  cursor: pointer;
+  color:white;
+  background-color: #024aa4;
+
+}
+.pagination>li>a:active{
+
+  background-color: black;
+  color: white;
+}
+.pagination>li{
+  text-align: center;
+
+}
+.pagination{
+    position: relative;
+    top: 354px;
+    left: 500px;
+
+    text-align: center;
+}
+#loginbtn{
+width: 100%;
+}
+.modal-form{
+  padding: 0px 0px 10px 0px;
+
+}
+body{
+background-color: #a8a8a82b;
+
+}
+
+#search-bar{
+width: 60%;
+}
+.navbar{
+padding: 5px;
+margin-bottom: 0px;
+}
+
+  .footer{
+    position: relative;
+    bottom: -100px;
+    border-top: 1px dotted;
+
+    display: text-center;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+  }
+
+  h4{
+
+    padding-left: 20px;
+  }
+
+  .copy-right{
+    text-align: center;
+    border-top: 1px dotted;
+    padding: 5px ;
+    font-weight: bold;
+
+  }
+
+  #loginbtn{
+  width: 100%;
+  }
+
+  body{
+  background-color: #a8a8a82b;
+
+  }
+
+  #search-bar{
+  width: 60%;
+  }
+  .navbar{
+  padding: 5px;
+  margin-bottom: 0px;
+  }
+  #Paybtn{
+    padding: 13px;
+    margin: 20px;
+    width: 94%;
+    text-align: center;
+  }
